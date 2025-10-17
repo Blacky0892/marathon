@@ -1,0 +1,23 @@
+h1 { color: black;   font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }
+p { color: black; font-style: normal; font-weight: normal; text-decoration: none; font-size: 7.5pt; margin:0pt; }
+h2 { color: black;  font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+h3 { color: black; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+.s1 { color: black; font-style: normal; font-weight: normal; text-decoration: none; font-size: 8pt; }
+.table{
+  td, th{
+    border: 1px solid;
+    padding: 5px;
+  }
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+.text-center{
+  text-align: center;
+}

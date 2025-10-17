@@ -1,0 +1,86 @@
+$primary: #25388e;
+$secondary: #f84791;
+$tertiary: #57dbd8;
+$quaternary: #558df3;
+
+$body: #c1c1c1;
+$alternate: #999999;
+$muted: #727272;
+$separator: #474747;
+$separator-light: #2e2e2e;
+$background: #1d1d1d;
+$foreground: #242424;
+$background-theme: #242424;
+$background-light: #292929;
+
+$light-text: #fff;
+$dark-text: #343a40;
+$light-text-darker: #eeeeee;
+$dark-text-darker: #23272b;
+
+$danger: #cf2637;
+$info: #279aac;
+$warning: #ebb71a;
+$success: #439b38;
+$light: #dadada;
+$dark: #4e4e4e;
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "quaternary": $quaternary,
+    "primary-darker": darken($primary, 5%),
+    "secondary-darker": darken($secondary, 5%),
+    "tertiary-darker": darken($tertiary, 5%),
+    "quaternary-darker": darken($quaternary, 5%),
+    "body": $body,
+    "alternate": $alternate,
+    "muted": $muted,
+    "separator": $separator,
+    "separator-light": $separator-light,
+    "background": $background,
+    "foreground": $foreground,
+    "background-theme": $background-theme,
+    "background-light": $background-light,
+    "gradient-1": lighten($primary, 10%),
+    "gradient-2": lighten($primary, 5%),
+    "gradient-3": darken($primary, 10%),
+    "gradient-1-lighter": lighten(lighten($primary, 10%), 10%),
+    "gradient-1-darker": darken(lighten($primary, 10%), 10%),
+    "light-text": $light-text,
+    "dark-text": $dark-text,
+    "light-text-darker": $light-text-darker,
+    "dark-text-darker": $dark-text-darker,
+    "danger": $danger,
+    "info": $info,
+    "warning": $warning,
+    "success": $success,
+    "light": $light,
+    "dark": $dark,
+    "danger-darker": darken($danger, 15%),
+    "info-darker": darken($info, 15%),
+    "warning-darker": darken($warning, 15%),
+    "success-darker": darken($success, 15%),
+    "light-darker": darken($light, 15%),
+    "dark-darker": darken($dark, 15%),
+    "body-darker": darken($body, 15%),
+    "alternate-darker": darken($alternate, 15%),
+    "muted-darker": darken($muted, 15%),
+    "separator-darker": darken($separator, 15%),
+);
+
+html[data-color='dark'] {
+    @each $key, $value in $colors {
+        --#{$key} : #{$value};
+        --#{$key}-rgb: #{HexToRGB($value)};
+    }
+
+    --menu-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    --menu-shadow-navcolor: 0px 3px 10px rgba(0, 0, 0, 0.4);
+
+    --background-navcolor-light: #fff;
+    --background-navcolor-dark: #242424;
+
+    --theme-image-filter: hue-rotate(0deg) brightness(0.9);
+}

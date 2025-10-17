@@ -1,0 +1,95 @@
+@import 'utils/mixins';
+@mixin vertical-align-center() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.wizard{
+  z-index: 1;
+  @include vertical-align-center;
+  min-width: 960px;
+  @include respond-below(md) {
+    min-width: 768px;
+  }
+  @include respond-below(sm) {
+    min-width: 576px;
+  }
+  @include respond-below(xs) {
+    min-width: 375px;
+  }
+
+  .flatpickr-calendar{
+    .flatpickr-rContainer{
+      width: 100%;
+      .flatpickr-days{
+        width: 100%;
+        .dayContainer{
+          min-width: 100%;
+          .flatpickr-day{
+            max-width: 100%;
+            height: 2rem;
+            line-height: 2rem;
+            background: var(--success-lighter);
+            border-color: var(--success);
+            &.selected{
+              background: var(--primary);
+              border-color: var(--primary);
+            }
+            &.flatpickr-disabled{
+              color: var(--muted);
+              background: inherit;
+              border: none;
+              &:hover{
+                background: inherit;
+                border-color: inherit;
+                color: var(--muted);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .times-container{
+    display: flex;
+    justify-content: space-around;
+    @include respond-below(md) {
+      flex-direction: column;
+    }
+    .times{
+      flex: 1;
+      border: 1px solid var(--primary);
+      margin: 0 1rem;
+      padding: 0.3rem;
+      border-radius: var(--border-radius-md);
+      color: var(--primary);
+      .sub-times{
+        display: block;
+        @include respond-above(md){
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          max-height: 90px;
+        }
+        overflow-y: auto;
+        .time-select {
+
+          width: 47%;
+          margin: 0.3rem 2px;
+        }
+      }
+    }
+  }
+
+  .card-footer{
+    @include respond-below(sm){
+      position: fixed;
+      width: 100%;
+      bottom: 10px;
+      background: var(--background-theme) !important;
+    }
+  }
+}

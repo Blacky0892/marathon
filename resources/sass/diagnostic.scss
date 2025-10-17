@@ -1,0 +1,67 @@
+.sections {
+  .section {
+    border-top: 1px solid var(--separator);
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    .section-title {
+      .number {
+        padding: 0.5rem;
+      }
+
+    }
+
+  }
+
+  .subsection {
+    border-top: 1px solid var(--separator);
+    padding-top: 0.4rem;
+
+    .subsection-title {
+      a {
+        display: flex;
+        align-items: center;
+        color: var(--font-heading);
+      }
+
+      .number {
+        padding: 0.3rem;
+      }
+    }
+  }
+
+  .question {
+    padding-left: 1rem;
+
+    &:not(:first-child) {
+      padding-top: 0.4rem;
+    }
+
+    .question-body {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .number {
+    color: var(--light);
+    background: var(--primary);
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+  }
+
+  .form-check-label{
+    padding: 0.2rem 0.4rem;
+    &:hover{
+      background: var(--primary-lighter);
+      cursor: pointer;
+    }
+  }
+  .form-check-input:checked + .form-check-label {
+    text-decoration: underline;
+    background: var(--primary-lighter);
+  }
+}

@@ -1,0 +1,58 @@
+.schedule-manage-week{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: -0.5rem;
+    .day{
+        border: 1px solid var(--primary);
+        border-radius: var(--border-radius-md);
+        text-align: center;
+        padding: 1rem;
+        flex-basis: calc(50% - 1rem);
+        margin: 0.5rem;
+        .day-header {
+            background-color: var(--foreground);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .work-day-list{
+            .work{
+                height: 1.8rem;
+                &.muted{
+                    p, a{
+                        color: var(--muted);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-day{
+    border: 1px solid var(--primary);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    padding: 0 0.5rem;
+    .day-header {
+        background-color: var(--foreground);
+        align-items: center;
+        padding: 0.5rem;
+        h5{
+            margin: 0;
+        }
+    }
+    .day-body{
+        .work{
+            padding: 0 0.5rem;
+            &.muted{
+                color: var(--muted);
+            }
+        }
+    }
+}
+
+.reccurent-check{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

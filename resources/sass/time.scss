@@ -1,0 +1,60 @@
+.preview-left{
+  width: 800px;
+  &.not-approve{
+    .preview-content{
+      background-image: url('/storage/images/draft_watermark.png');
+    }
+  }
+}
+.preview-content{
+  user-select: none;
+  padding: 2rem;
+  background-color: var(--foreground);
+  font-family: 'Times New Roman';
+  font-size: 10pt;
+
+  .header{
+    text-align: right;
+  }
+
+  .post-department{
+    padding-top: 8px;
+  }
+
+  .text-larger{
+    font-size: 11pt;
+  }
+
+  table{
+    width: 100%;
+    border-spacing: 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    tr:first-child{
+      td:not(:first-child){
+        width: 14%;
+      }
+    }
+
+    td{
+      text-align: center;
+      vertical-align: top;
+      border: 1px solid black;
+      border-spacing: 0;
+      border-collapse: collapse;
+      border-top-width: 0;
+      border-right-width: 0;
+      padding: 4px 0 6px 0;
+    }
+  }
+}
+.preview-right{
+  margin-left: 2rem;
+  .preview-approve{
+    background: var(--foreground);
+    position: sticky;
+    top: calc(var(--nav-size-slim) + 1rem);
+    padding: 1rem;
+    width: 300px;
+  }
+}
