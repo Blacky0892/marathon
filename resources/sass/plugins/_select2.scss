@@ -7,12 +7,12 @@
 */
 
 .select2-container--bootstrap4.select2-container--focus {
-    &, &.select2-container--open{
-        .select2-selection {
-            box-shadow: initial;
-            border: 1px solid var(--info);
-        }
+  &, &.select2-container--open{
+    .select2-selection {
+      box-shadow: initial;
+      border: 1px solid var(--info);
     }
+  }
 }
 
 .select2-container--bootstrap4 .select2-selection {
@@ -251,4 +251,35 @@
 
 .select2-dropdown {
   z-index: 1061;
+}
+
+.schoolSelect + .select2-container .select2-selection--single {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: #fff !important;
+  padding: 0 !important; /* Убираем padding у контейнера */
+  height: auto !important;
+}
+
+.schoolSelect + .select2-container--bootstrap4.select2-container--focus .select2-selection--single,
+.schoolSelect + .select2-container--bootstrap4.select2-container--open .select2-selection--single {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.schoolSelect + .select2-container .select2-selection--single .select2-selection__rendered {
+  background-color: #fff;
+  padding-left: 1rem !important;
+  color: #495057 !important;
+  line-height: 1.5 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.schoolSelect + .select2-container .select2-selection--single .select2-selection__placeholder {
+  color: #6c757d !important;
+  line-height: 1.5 !important;
 }

@@ -32,7 +32,7 @@
     @include('_layout.nav')
   </div>
   <main>
-    @include('user.tilda')
+    {{--@include('user.tilda')--}}
   </main>
   @stack('modals')
 </div>

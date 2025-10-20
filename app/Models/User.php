@@ -36,6 +36,10 @@ class User extends Authenticatable
         'post',
         'phone',
         'email_verified_at',
+        'school_id',
+        'area_id',
+        'responsible',
+        'mrsd',
     ];
 
     /**

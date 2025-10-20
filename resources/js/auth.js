@@ -1,12 +1,28 @@
 import {getNewIterationId, addFullClassToSelect2, selectSchoolAjax, selectDefault, url} from "./helpers/helper";
+import '../sass/plugins/_select2.scss';
+
 
 $(function () {
   //let selects = $('.select2Default');
 
+  //Создание select2 для выбора школы при регистрации
+  let schoolSelect = $('.schoolSelect');
+  if (schoolSelect.length && !schoolSelect.hasClass('select2-hidden-accessible')) {
+    schoolSelect.select2({
+      language: 'ru',
+      placeholder: 'Начните вводить название школы...',
+      sorter: function(data) {
+        return data.sort(function(a, b) {
+          return a.text.localeCompare(b.text);
+        });
+      }
+    });
+
+  }
+
   // если есть кнопка добавления ОО - мы на странице регистрации
   let addBtn = $('.addSchool');
   if (addBtn.length) {
-    let sel = $('.schoolSelect');
 
     // Селект2 с поиском
     let selectOptions = {

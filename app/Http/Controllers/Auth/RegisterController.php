@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Models\Area;
 use App\Models\Role;
+use App\Models\School;
 use App\Models\User;
 use App\Traits\RedirectUsers;
 use Illuminate\Auth\Events\Registered;
@@ -29,9 +30,9 @@ class RegisterController extends Controller
      */
     public function showRegisterForm(): View
     {
-        $areas = Area::all();
+        $schools = School::all();
 
-        return view('auth.register', compact('areas'));
+        return view('auth.register', compact('schools'));
     }
 
     /**
@@ -63,26 +64,14 @@ class RegisterController extends Controller
             'name'     => $data['name'],
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
-            'post'     => $data['post'],
-            'phone'    => $data['phone'],
+            'school_id' => $data['school_id'] ?? null,
         ]);
 
         // Назначение пользовательской роли
         $user->roles()->attach(Role::firstWhere('slug', 'user'));
 
         // Создание заявки для пользователя
-        $order = $user->order()->create();
-
-        // Добавление ОО из формы в заявку
-        foreach ($data['school'] as $key => $school) {
-            $order->schools()->create([
-                //'full_name'  => $data['fullName'][$key],
-                //'short_name' => $data['shortName'][$key],
-                //'area_id'    => $data['area'][$key],
-                //'mrsd'       => $data['mrsd'][$key],
-                'school_id' => $school,
-            ]);
-        }
+        //$order = $user->order()->create();
 
         return $user;
     }
