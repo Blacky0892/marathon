@@ -17,7 +17,7 @@
       <span class="label">Список заявок</span>
     </a>
   </li>
-  <li>
+  {{--<li>
     <a href="{{route('moderator.stage', 1)}}"
        class="{{ isset($active) && $active === 'stage-1' ? 'active' : '' }}"
     >
@@ -32,7 +32,7 @@
       <i data-acorn-icon="notebook-1" class="icon" data-acorn-size="18"></i>
       <span class="label">Этап II</span>
     </a>
-  </li>
+  </li>--}}
   <p class="my-5 text-white">Модерирование</p>
     @foreach($nominations as $nomination)
       @if($nomination->slug !== 'quiz1')

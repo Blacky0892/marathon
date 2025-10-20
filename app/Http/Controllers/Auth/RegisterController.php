@@ -63,8 +63,9 @@ class RegisterController extends Controller
         $user = User::create([
             'name'     => $data['name'],
             'email'    => $data['email'],
+            'phone'    => $data['phone'],
             'password' => Hash::make($data['password']),
-            'school_id' => $data['school_id'] ?? null,
+            'school_id' => $data['oo'] ?? null,
         ]);
 
         // Назначение пользовательской роли

@@ -16,8 +16,6 @@
         <dl class="row mb-0">
             <dt class="col-sm-3">ФИО</dt>
             <dd class="col-sm-8">{{$order->name}}</dd>
-            <dt class="col-sm-3">Должность</dt>
-            <dd class="col-sm-8">{{$order->post->title ?? null}}</dd>
             <dt class="col-sm-3">Email</dt>
             <dd class="col-sm-8">{{$order->email}}</dd>
             <dt class="col-sm-3 text-truncate">Телефон</dt>

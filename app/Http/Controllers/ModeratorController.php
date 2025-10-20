@@ -52,11 +52,7 @@ class ModeratorController extends Controller
             //case 'name':
                 //$table->sortWithJoin('users', 'user_id', 'name');
                 //break;
-            case 'school':
-                $table->records->leftJoin('schools', 'users.school_id', 'schools.id');
-                $table->records->orderBy('schools.short_name', $table->getColumnSortOrder())
-                    ->select('users.*', 'schools.short_name as orderField');
-                break;
+
             default:
                 $table->simpleSort();
                 break;
