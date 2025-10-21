@@ -33,6 +33,13 @@
   </div>
   <main>
     {{--@include('user.tilda')--}}
+    <div class="card">
+      <div class="card-body">
+        <h4 class="text-center mt-7">Спасибо за регистрацию!</h4>
+        <h4 class="text-center">Личные кабинеты будут открыты 11.11.2025</h4>
+      </div>
+    </div>
+
   </main>
   @stack('modals')
 </div>
